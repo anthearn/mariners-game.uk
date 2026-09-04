@@ -36,10 +36,24 @@ body { background: #030303; }
   object-position: center;
 }
 
-/* Gradients make the artwork dissolve into the page, regardless of viewport ratio. */
+/* Layered linear fades give every edge a predictable, seamless falloff to black. */
 .hero-fade {
   z-index: -1;
-  background: radial-gradient(ellipse 72% 66% at 50% 47%, transparent 50%, #030303 100%);
+  background:
+    linear-gradient(90deg,
+      #030303 0%,
+      rgba(3, 3, 3, .94) 7%,
+      transparent 27%,
+      transparent 73%,
+      rgba(3, 3, 3, .94) 93%,
+      #030303 100%),
+    linear-gradient(0deg,
+      #030303 0%,
+      rgba(3, 3, 3, .8) 11%,
+      transparent 32%,
+      transparent 73%,
+      rgba(3, 3, 3, .72) 91%,
+      #030303 100%);
 }
 
 .hero-content {
@@ -73,5 +87,21 @@ body { background: #030303; }
 @media (max-width: 38rem) {
   .hero { min-height: 34rem; }
   .hero-art { object-fit: cover; }
-  .hero-fade { background: radial-gradient(ellipse 95% 62% at 50% 50%, transparent 43%, #030303 100%); }
+  .hero-fade {
+    background:
+      linear-gradient(90deg,
+        #030303 0%,
+        rgba(3, 3, 3, .92) 8%,
+        transparent 30%,
+        transparent 70%,
+        rgba(3, 3, 3, .92) 92%,
+        #030303 100%),
+      linear-gradient(0deg,
+        #030303 0%,
+        rgba(3, 3, 3, .72) 14%,
+        transparent 40%,
+        transparent 72%,
+        rgba(3, 3, 3, .62) 89%,
+        #030303 100%);
+  }
 }

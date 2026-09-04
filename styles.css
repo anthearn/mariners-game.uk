@@ -85,23 +85,27 @@ body { background: #030303; }
 }
 
 @media (max-width: 38rem) {
-  .hero { min-height: 34rem; }
+  /* The Kickstarter artwork is landscape: keep its full title visible on phones. */
+  .hero {
+    min-height: 0;
+    aspect-ratio: 1672 / 941;
+  }
   .hero-art { object-fit: cover; }
   .hero-fade {
     background:
       linear-gradient(90deg,
         #030303 0%,
-        rgba(3, 3, 3, .92) 8%,
-        transparent 30%,
-        transparent 70%,
-        rgba(3, 3, 3, .92) 92%,
+        rgba(3, 3, 3, .82) 7%,
+        transparent 20%,
+        transparent 80%,
+        rgba(3, 3, 3, .82) 93%,
         #030303 100%),
       linear-gradient(0deg,
         #030303 0%,
-        rgba(3, 3, 3, .72) 14%,
-        transparent 40%,
-        transparent 72%,
-        rgba(3, 3, 3, .62) 89%,
+        rgba(3, 3, 3, .72) 12%,
+        transparent 35%,
+        transparent 73%,
+        rgba(3, 3, 3, .6) 91%,
         #030303 100%);
   }
 }
